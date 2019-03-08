@@ -1,7 +1,7 @@
 <template>
-  <div class="posts">
+  <div class="posts uk-animation-fade">
     <h1>Posts</h1>
-    <div v-if="posts.length > 0" class="table-wrap">
+    <div v-if="posts.length > 0" class="table-wrap uk-animation-slide-bottom-medium">
       <div>
         <router-link v-bind:to="{ name: 'addpost' }" class="">Add Post</router-link>
       </div>
@@ -21,7 +21,7 @@
         </tr>
       </table>
     </div>
-    <div v-else>
+    <div v-else class="uk-animation-slide-bottom-medium">
       There are no posts.. Lets add one now <br /><br />
       <router-link v-bind:to="{ name: 'addpost' }" class="add_post_link">Add Post</router-link>
     </div>
@@ -55,11 +55,14 @@ export default {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-      }).then(function () {
-        PostsService.deletePost(id)
-        $this.$router.go({
-          path: '/'
-        })
+      }).then(function (result) {
+        console.log(result)
+        if (result.value === true) {
+          PostsService.deletePost(id)
+          $this.$router.go({
+            path: '/'
+          })
+        }
       })
     }
   }

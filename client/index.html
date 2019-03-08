@@ -3,8 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>client</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+
   </head>
   <body>
+      <nav class="uk-navbar-container uk-margin" uk-navbar>
+          <div class="uk-navbar-left">
+      
+              <a class="uk-navbar-item uk-logo" href="#">AB MEVN Boilerplate App</a>
+      
+              <ul class="uk-navbar-nav">
+                  <li>
+                      <a href="/">
+                          <!-- <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span> -->
+                          Posts
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/locations">Locations</a>
+                  </li>
+              </ul>
+      
+      
+          </div>
+      </nav>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
